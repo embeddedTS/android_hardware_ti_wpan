@@ -1,5 +1,3 @@
-ifeq ($(TARGET_ARCH),arm)
-
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
@@ -14,7 +12,6 @@ LOCAL_SRC_FILES:= \
 LOCAL_CFLAGS:= -g -c -W -Wall -O2 -D_POSIX_SOURCE
 LOCAL_SHARED_LIBRARIES:= libnetutils libcutils liblog
 LOCAL_MODULE:=uim-sysfs
-LOCAL_MODULE_TAGS:= eng
+LOCAL_MODULE_TAGS:= optional
+LOCAL_MODULE_CLASS := EXECUTABLES
 include $(BUILD_EXECUTABLE)
-
-endif

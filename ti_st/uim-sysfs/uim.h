@@ -46,7 +46,7 @@
 #define EVT_CMD_STATUS          0x0F
 
 
-//#define VERBOSE
+#define VERBOSE
 #ifdef ANDROID
 #define LOG_TAG "uim-sysfs"
 #define UIM_ERR(fmt, arg...)  ALOGE("uim:"fmt"\n" , ##arg)
@@ -117,11 +117,6 @@ typedef struct {
 	hci_command_hdr hci_hdr;
 	bdaddr_t addr;
 } __attribute__ ((packed)) uim_bdaddr_change_cmd;
-
-#define INSTALL_SYSFS_ENTRY	"/sys/devices/platform/kim/install"
-#define DEV_NAME_SYSFS		"/sys/devices/platform/kim/dev_name"
-#define BAUD_RATE_SYSFS		"/sys/devices/platform/kim/baud_rate"
-#define FLOW_CTRL_SYSFS		"/sys/devices/platform/kim/flow_cntrl"
 
 /* Functions to insert and remove the kernel modules from the system*/
 extern int init_module(void *, unsigned int, const char *);
